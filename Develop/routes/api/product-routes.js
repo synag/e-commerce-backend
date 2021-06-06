@@ -8,6 +8,10 @@ router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
   try{
+    const productData = await Product.findAll({
+      include: [{ model: Category }],
+    });
+    res.status(200).json(productData);
 
   } catch (err) {
     res.status(500).json(err);
@@ -20,6 +24,11 @@ router.get('/:id', (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
   try{
+    const productData = await Product.findByPk(req.params.id, {
+      include: [{ model: Category }],
+    });
+    res.status(200).json(productData);
+    
 
   } catch (err) {
     res.status(500).json(err);
@@ -38,6 +47,14 @@ router.post('/', (req, res) => {
     }
   */
     try{
+      const productData = await Category.create({
+        product_name: req.body.product_name,
+        price: req.body.price,
+        stock: req.body.stock,
+        category_id: req.body.category_id,
+
+      });
+      res.status(200).json(productData);
 
     } catch (err) {
       res.status(500).json(err);
