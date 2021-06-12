@@ -38,7 +38,7 @@ Minimum usage instructions.
 
 The sreenshot for the E Commerce Back-end is below. 
 
-![E Commerce Back-end](\Develop\Image\screenshot.jpg)
+![E Commerce Back-end](e-commerce-backend\Develop\Image\screenshot.jpg)
 
 ## License
 The license used for this project is BSD 2-Clause License. Here is the license link https://opensource.org/licenses/BSD-2-Clause
